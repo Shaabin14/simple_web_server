@@ -1,7 +1,6 @@
 # EX01 Developing a Simple Webserver
 
-# Date:
- 02/10/24
+# Date: 02/10/24
 # AIM:
 To develop a simple webserver to serve html pages and display the configuration details of laptop.
 
@@ -28,94 +27,58 @@ Testing the webserver.
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power Calculator</title>
+    <title>Laptop Configuration</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Power Calculator</h1>
-        <form id="powerForm">
-            <label for="intensity">Intensity (I):</label>
-            <input type="number" id="intensity" name="intensity" placeholder="Enter intensity (in amperes)" required>
-            
-            <label for="resistance">Resistance (R):</label>
-            <input type="number" id="resistance" name="resistance" placeholder="Enter resistance (in ohms)" required>
-            
-            <button type="button" onclick="calculatePower()">Calculate Power</button>
-        </form>
-        <div class="result" id="result"></div>
-    </div>
-    <script>
-        function calculatePower() {
-            // Get input values
-            const intensity = parseFloat(document.getElementById('intensity').value);
-            const resistance = parseFloat(document.getElementById('resistance').value);
-
-            // Validate inputs
-            if (isNaN(intensity) || isNaN(resistance) || intensity <= 0 || resistance <= 0) {
-                document.getElementById('result').innerHTML = "Please enter valid positive numbers for intensity and resistance.";
-                return;
-            }
-
-            // Calculate power
-            const power = intensity * intensity * resistance;
-
-            // Display result
-            document.getElementById('result').innerHTML = `Power (P) = ${power.toFixed(2)} watts`;
-        }
-    </script>
+    <header>
+        <h1>Laptop Configuration Details</h1>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Operating System</td>
+                    <td>Windows 10</td>
+                </tr>
+                <tr>
+                    <td>OS Version</td>
+                    <td>10.0.19041</td>
+                </tr>
+                <tr>
+                    <td>OS Release</td>
+                    <td>Windows 10 Home</td>
+                </tr>
+                <tr>
+                    <td>Machine</td>
+                    <td>x64-based PC</td>
+                </tr>
+                <tr>
+                    <td>Processor</td>
+                    <td>Intel Core i7-10750H</td>
+                </tr>
+                <tr>
+                    <td>CPU Count</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>RAM Size</td>
+                    <td>16 GB</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 Laptop Configuration. All rights reserved.</p>
+    </footer>
 </body>
 </html>
-CSS
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 20px;
-}
-.container {
-    max-width: 500px;
-    margin: 50px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-h1 {
-    text-align: center;
-    color: #333;
-}
-label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
-}
-input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-button {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #45a049;
-}
-.result {
-    margin-top: 20px;
-    font-size: 18px;
-    text-align: center;
-    color: #333;
-}
 
 ```
 # OUTPUT:
